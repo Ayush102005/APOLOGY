@@ -1,0 +1,170 @@
+.App {
+  text-align: center;
+  background: linear-gradient(-45deg, #1a0033, #330066, #ffcc00, #ff9900);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.sorry-text {
+  font-size: 8rem;
+  font-weight: bold;
+  animation: fadeIn 3s ease-in-out, glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00, 0 0 60px #ffcc00, 0 0 70px #ffcc00;
+}
+
+.message-container {
+  margin-top: 2rem;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.message {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.next-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #ffcc00;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #1a0033;
+  font-weight: bold;
+  cursor: pointer;
+  animation: fadeIn 2s ease-in-out;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #ff9900;
+}
+
+.forgive-hands {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.left-hand, .right-hand {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease-in-out;
+  filter: drop-shadow(0 0 5px #ffcc00) drop-shadow(0 0 10px #ffcc00);
+}
+
+.right-hand {
+  transform: scaleX(-1);
+}
+
+.forgive-hands:hover .left-hand {
+  transform: translateX(15px) rotate(-10deg);
+}
+
+.forgive-hands:hover .right-hand {
+  transform: scaleX(-1) translateX(15px) rotate(-10deg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00, 0 0 60px #ffcc00, 0 0 70px #ffcc00;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 60px #ff9900, 0 0 70px #ff9900, 0 0 80px #ff9900;
+  }
+}
+
+.thank-you-text {
+  font-size: 8rem;
+  animation: rainbow-text 2s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+
+.secret-code-container {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.secret-code {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.handshake-container {
+  margin-top: 2rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.handshake {
+  width: 150px;
+  height: 150px;
+  animation: handshake-animation 1s ease-in-out forwards;
+}
+
+@keyframes handshake-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rainbow-text {
+  0% { color: #ff0000; }
+  15% { color: #ff7f00; }
+  30% { color: #ffff00; }
+  45% { color: #00ff00; }
+  60% { color: #0000ff; }
+  75% { color: #4b0082; }
+  90% { color: #9400d3; }
+  100% { color: #ff0000; }
+}
